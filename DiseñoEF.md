@@ -208,10 +208,8 @@ KMO(r)
     ##           0.67
 
 KMO= 0,69 El modelo es middling (regular), si es adecuado para realizar
-análisis factorial. KMO Nucleo\_Fam= 0,53 (Miserable) KMO Estrato\_s=
-0,72 (Middling) KMO N\_Habitaciones= 0,59 (Mediocre) KMO Gana\_mes= 0,76
-(Middling) KMO N\_Carros= 0,82 (Meritorious) KMO Hrs\_internet= 0,67
-(Mediocre)
+análisis factorial. KMO Estrato\_s= 0,72 (Middling) KMO Gana\_mes= 0,76
+(Middling) KMO N\_Carros= 0,82 (Meritorious)
 
 # DETERMINACION DEL NUMERO DE FACTORES A EXTRAER
 
@@ -292,10 +290,6 @@ fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
     ## ultra-Heywood case was detected. Examine the results carefully
 
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
 
     ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
     ## The estimated weights for the factor scores are probably incorrect. Try a
@@ -306,41 +300,17 @@ fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
 
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
-
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## The estimated weights for the factor scores are probably incorrect. Try a
-    ## different factor score estimation method.
-
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## An ultra-Heywood case was detected. Examine the results carefully
-
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
 
     ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
     ## The estimated weights for the factor scores are probably incorrect. Try a
     ## different factor score estimation method.
 
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## An ultra-Heywood case was detected. Examine the results carefully
-
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
-
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## The estimated weights for the factor scores are probably incorrect. Try a
-    ## different factor score estimation method.
-
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## An ultra-Heywood case was detected. Examine the results carefully
-
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
-
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## The estimated weights for the factor scores are probably incorrect. Try a
-    ## different factor score estimation method.
-
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## An ultra-Heywood case was detected. Examine the results carefully
-
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
 
     ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
@@ -365,7 +335,6 @@ fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
 
     ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
     ## The estimated weights for the factor scores are probably incorrect. Try a
@@ -373,6 +342,9 @@ fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
 
     ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
     ## An ultra-Heywood case was detected. Examine the results carefully
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
 
 ![](DiseñoEF_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
@@ -422,7 +394,7 @@ paran(r, iterations = 1000, graph = T)
     ## Component   Adjusted    Unadjusted    Estimated 
     ##             Eigenvalue  Eigenvalue    Bias 
     ## -------------------------------------------------- 
-    ## 1           2.793710    4.542408      1.748698
+    ## 1           2.796476    4.542408      1.745931
     ## -------------------------------------------------- 
     ## 
     ## Adjusted eigenvalues > 1 indicate dimensions to retain.
@@ -603,13 +575,16 @@ alta y el RMSR más pequeño.
 
 ## Método de análisis de las componentes principales (ACP)
 
-``` r
-#Solo se grafica cuando hay 2 factores a extraer, con 1 factor no hay grafica
-```
+\#Solo se grafica cuando hay 2 factores a extraer, con 1 factor no hay
+grafica plot(acp, labels=row.names(r), cex=.7, ylim=c(-.8,.8))
 
 ## Método de las componentes principales iteradas (CPI)
 
+plot(cpi, labels=row.names(r), cex=.7, ylim=c(-.8,.8))
+
 ## Método de la máxima verosimilitud (MVE)
+
+plot(mve, labels=row.names(r), cex=1, ylim=c(-.8,.8))
 
 # OBTENCION DE LAS PUNTUACIONES FACTORIALES
 
@@ -704,41 +679,41 @@ puntfact_cpi<- as.data.frame(puntfact_cpi)
 ## METODO DE LA MAXIMA VEROSIMILITUD
 
 ``` r
-mve1<- fa(datost[,2:6], nfactors= 1, fm= "ml", rotate= "none", n.obs= 30, scores= "regression")
+mve1<- fa(datost[,2:7], nfactors= 1, fm= "ml", rotate= "none", n.obs= 30, scores= "regression")
 mve1$scores
 ```
 
     ##               ML1
-    ##  [1,] -1.39872301
-    ##  [2,] -1.01982584
-    ##  [3,] -0.57658644
-    ##  [4,] -0.48798832
-    ##  [5,] -1.04309114
-    ##  [6,] -0.97513835
-    ##  [7,] -1.44341050
-    ##  [8,] -0.07237891
-    ##  [9,]  0.06641712
-    ## [10,] -0.57553055
-    ## [11,] -1.15239988
-    ## [12,] -0.58022537
-    ## [13,] -0.44142934
-    ## [14,] -0.60784118
-    ## [15,]  0.05116399
-    ## [16,]  0.75156384
-    ## [17,]  0.67094098
-    ## [18,]  0.44425840
-    ## [19,] -0.16643453
-    ## [20,] -0.06076472
-    ## [21,]  0.33489855
-    ## [22,]  0.58228994
-    ## [23,]  0.56159350
-    ## [24,]  2.24251358
-    ## [25,]  0.07877979
-    ## [26,]  0.71457259
-    ## [27,]  0.62409061
-    ## [28,]  0.47838759
-    ## [29,]  1.49560768
-    ## [30,]  1.50468992
+    ##  [1,] -1.25826842
+    ##  [2,] -1.20520978
+    ##  [3,] -0.89565188
+    ##  [4,] -0.93316757
+    ##  [5,] -1.32602985
+    ##  [6,] -1.08801721
+    ##  [7,] -1.37546099
+    ##  [8,] -0.78956343
+    ##  [9,] -0.68695069
+    ## [10,] -1.16447519
+    ## [11,] -0.47931609
+    ## [12,] -0.15597127
+    ## [13,] -0.05335853
+    ## [14,] -0.34268130
+    ## [15,]  0.08608201
+    ## [16,]  0.18965786
+    ## [17,]  0.25382062
+    ## [18,]  0.31461270
+    ## [19,] -0.03620093
+    ## [20,] -0.14323409
+    ## [21,]  0.31487702
+    ## [22,]  0.91191654
+    ## [23,]  1.02067688
+    ## [24,]  1.69044375
+    ## [25,]  0.95247348
+    ## [26,]  1.31951795
+    ## [27,]  1.18718812
+    ## [28,]  0.87601550
+    ## [29,]  1.44584153
+    ## [30,]  1.37043328
 
 ``` r
 puntfact_mve<- mve1$scores

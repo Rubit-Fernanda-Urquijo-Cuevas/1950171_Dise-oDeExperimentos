@@ -68,12 +68,9 @@ Se elimina una variable del modelo, si el KMO es menor a 0,7.
 KMO(r)
 ```
 KMO= 0,69 El modelo es middling (regular), si es adecuado para realizar análisis factorial.
-KMO Nucleo_Fam= 0,53 (Miserable)
 KMO Estrato_s= 0,72 (Middling)
-KMO N_Habitaciones= 0,59 (Mediocre)
 KMO Gana_mes= 0,76 (Middling)
 KMO N_Carros= 0,82 (Meritorious)
-KMO Hrs_internet= 0,67 (Mediocre)
 
 # DETERMINACION DEL NUMERO DE FACTORES A EXTRAER  
 ## Método de las componentes principales iteradas (Ejes principales)  
@@ -165,20 +162,16 @@ MVE: Var= 43%    RMSR= 0,2
 Aquel modelo que tenga la proportion var más alta y el RMSR más pequeño.
 
 # REPRESENTACION GRAFICA DE LOS FACTORES EXTRAIDOS
+
 ## Método de análisis de las componentes principales (ACP)
-```{r}
 #Solo se grafica cuando hay 2 factores a extraer, con 1 factor no hay grafica
-```
+plot(acp, labels=row.names(r), cex=.7, ylim=c(-.8,.8))
 
-## Método de las componentes principales iteradas (CPI)
-```{r}
-
-```
+## Método de las componentes principales iteradas (CPI)  
+plot(cpi, labels=row.names(r), cex=.7, ylim=c(-.8,.8))
 
 ## Método de la máxima verosimilitud (MVE)
-```{r}
-
-```
+plot(mve, labels=row.names(r), cex=1, ylim=c(-.8,.8))
 
 # OBTENCION DE LAS PUNTUACIONES FACTORIALES
 ## METODO DE ANALISIS DE LAS COMPONENTES PRINCIPALES ITERADAS (ACP)
@@ -199,7 +192,7 @@ puntfact_cpi<- as.data.frame(puntfact_cpi)
 
 ## METODO DE LA MAXIMA VEROSIMILITUD
 ```{r}
-mve1<- fa(datost[,2:6], nfactors= 1, fm= "ml", rotate= "none", n.obs= 30, scores= "regression")
+mve1<- fa(datost[,2:7], nfactors= 1, fm= "ml", rotate= "none", n.obs= 30, scores= "regression")
 mve1$scores
 puntfact_mve<- mve1$scores
 puntfact_mve<- as.data.frame(puntfact_mve)
@@ -223,16 +216,3 @@ datos_puntuaciones<- as.data.frame(datos_puntuaciones)
 setwd("C:/Users/INDEX/Documents/Diseño de Experimentos/Temas Examen Final") #define donde guardaras tu archivo Excel csv
 write.table(datos_puntuaciones, file= "encuesta.csv", sep= ";", row.names= F, dec=",")
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
