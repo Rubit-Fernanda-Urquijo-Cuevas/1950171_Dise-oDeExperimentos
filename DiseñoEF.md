@@ -194,39 +194,201 @@ hacer AFE. (Que variables elimino o mantengo) Se mantiene una variable
 en el modelo, si el KMO es igual o mayor a 0,7. Se elimina una variable
 del modelo, si el KMO es menor a 0,7.
 
-KMO= , adecuado para realizar análisis factorial. KMO Nº del articulo=
-KMO Cantidad de prod.= KMO Precio Unidad= KMO Subtotal= KMO IVA=
+``` r
+KMO(r)
+```
+
+    ## Kaiser-Meyer-Olkin factor adequacy
+    ## Call: KMO(r = r)
+    ## Overall MSA =  0.69
+    ## MSA for each item = 
+    ##     Nucleo_Fam      Estrato_s N_Habitaciones       Gana_mes       N_Carros 
+    ##           0.53           0.72           0.59           0.76           0.82 
+    ##   Hrs_internet 
+    ##           0.67
+
+KMO= 0,69 El modelo es middling (regular), si es adecuado para realizar
+análisis factorial. KMO Nucleo\_Fam= 0,53 (Miserable) KMO Estrato\_s=
+0,72 (Middling) KMO N\_Habitaciones= 0,59 (Mediocre) KMO Gana\_mes= 0,76
+(Middling) KMO N\_Carros= 0,82 (Meritorious) KMO Hrs\_internet= 0,67
+(Mediocre)
 
 # DETERMINACION DEL NUMERO DE FACTORES A EXTRAER
 
 ## Método de las componentes principales iteradas (Ejes principales)
 
-## Este método de las Ejes principales es de naturaleza no paramétrica, es decir, que se ocupa, cuando no hay normalidad multivariante; pero, también es válido para modelos paramétricos (normalidad multivariante)
+Este método de las Ejes principales es de naturaleza no paramétrica, es
+decir, que se ocupa, cuando no hay normalidad multivariante; pero,
+también es válido para modelos paramétricos (normalidad multivariante)
 
-Con el método de los ejes principales se extraería solo n factor
+``` r
+fa.parallel(r, fm= "pa", n.obs= 30, ylabel= "Eigenvalues")
+```
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
+    ## ultra-Heywood case was detected. Examine the results carefully
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
+    ## ultra-Heywood case was detected. Examine the results carefully
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
+    ## ultra-Heywood case was detected. Examine the results carefully
+
+![](DiseñoEF_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+    ## Parallel analysis suggests that the number of factors =  2  and the number of components =  2
+
+Con el método de los ejes principales se extraería solo 2 factores.
 
 ## Método de las componentes principales
 
-## Método paramétrico, sirve solo para modelos con normalidad multivariante
+Método paramétrico, sirve solo para modelos con normalidad multivariante
 
-con el método de las componentes principales se recomienda extraer n
-factor
+``` r
+fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
+```
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
+    ## ultra-Heywood case was detected. Examine the results carefully
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## An ultra-Heywood case was detected. Examine the results carefully
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## An ultra-Heywood case was detected. Examine the results carefully
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## An ultra-Heywood case was detected. Examine the results carefully
+
+![](DiseñoEF_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+    ## Parallel analysis suggests that the number of factors =  2  and the number of components =  2
+
+con el método de las componentes principales se recomienda extraer 2
+factores
 
 ## Método de la máxima verosimilitud
 
-## Método paramétrico, sirve solo para modelos con normalidad multivariante
+Método paramétrico, sirve solo para modelos con normalidad multivariante
 
-Con el método de la máxima verosimilitud se recomienda extraer factor
+``` r
+fa.parallel(r, fm= "ml", n.obs= 30, ylabel= "Eigenvalues")
+```
+
+![](DiseñoEF_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+    ## Parallel analysis suggests that the number of factors =  2  and the number of components =  2
+
+Con el método de la máxima verosimilitud se recomienda extraer 2
+factores.
 
 ## Método paralelo con iteraciones
 
-## Método paramétrico, sirve solo para modelos con normalidad multivariante
+Método paramétrico, sirve solo para modelos con normalidad multivariante
+
+``` r
+library(paran)
+```
+
+    ## Loading required package: MASS
+
+``` r
+paran(r, iterations = 1000, graph = T)
+```
+
+    ## 
+    ## Using eigendecomposition of correlation matrix.
+    ## Computing: 10%  20%  30%  40%  50%  60%  70%  80%  90%  100%
+    ## 
+    ## 
+    ## Results of Horn's Parallel Analysis for component retention
+    ## 1000 iterations, using the mean estimate
+    ## 
+    ## -------------------------------------------------- 
+    ## Component   Adjusted    Unadjusted    Estimated 
+    ##             Eigenvalue  Eigenvalue    Bias 
+    ## -------------------------------------------------- 
+    ## 1           2.808464    4.542408      1.733944
+    ## -------------------------------------------------- 
+    ## 
+    ## Adjusted eigenvalues > 1 indicate dimensions to retain.
+    ## (1 components retained)
+
+![](DiseñoEF_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 Con el método de Horn\`s (método paralelo con iteraciones) se recomienda
-extraer n factor
+extraer 1 factor
 
-Resumen: Ejes principales= 1 factor Componentes principales= 1 factor
-Máxima verosimilitud= 1 factor Método paralelo con iteraciones
+Resumen: Ejes principales= 2 factor Componentes principales= 2 factor
+Máxima verosimilitud= 2 factor Método paralelo con iteraciones
 (Horn\`s)= 1 factor
 
 Conclusión: vamos a extraer 1 factor

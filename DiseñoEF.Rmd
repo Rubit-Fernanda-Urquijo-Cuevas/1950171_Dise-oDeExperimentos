@@ -66,39 +66,56 @@ Como el p value es menor a alfa, se rechaza la H0, por lo tanto, las correlacion
 Estudia variable por variable, si son o no aceptadas en el modelo para hacer AFE. (Que variables elimino o mantengo)
 Se mantiene una variable en el modelo, si el KMO es igual o mayor a 0,7.
 Se elimina una variable del modelo, si el KMO es menor a 0,7.
+```{r}
+KMO(r)
+```
 
-KMO= ,  adecuado para realizar análisis factorial.
-KMO Nº del articulo=
-KMO Cantidad de prod.= 
-KMO Precio Unidad= 
-KMO Subtotal= 
-KMO IVA= 
+KMO= 0,69 El modelo es middling (regular), si es adecuado para realizar análisis factorial.
+KMO Nucleo_Fam= 0,53 (Miserable)
+KMO Estrato_s= 0,72 (Middling)
+KMO N_Habitaciones= 0,59 (Mediocre)
+KMO Gana_mes= 0,76 (Middling)
+KMO N_Carros= 0,82 (Meritorious)
+KMO Hrs_internet= 0,67 (Mediocre)
 
 # DETERMINACION DEL NUMERO DE FACTORES A EXTRAER  
 ## Método de las componentes principales iteradas (Ejes principales)  
 Este método de las Ejes principales es de naturaleza no paramétrica, es decir, que se ocupa, cuando no hay normalidad multivariante; pero, también es válido para modelos paramétricos (normalidad multivariante)
--
-Con el método de los ejes principales se extraería solo n factor
+```{r}
+fa.parallel(r, fm= "pa", n.obs= 30, ylabel= "Eigenvalues")
+```
+
+Con el método de los ejes principales se extraería solo 2 factores.
 
 ## Método de las componentes principales
 Método paramétrico, sirve solo para modelos con normalidad multivariante
--
-con el método de las componentes principales se recomienda extraer n factor
+```{r}
+fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
+```
+
+con el método de las componentes principales se recomienda extraer 2 factores
 
 ## Método de la máxima verosimilitud  
 Método paramétrico, sirve solo para modelos con normalidad multivariante 
--
-Con el método de la máxima verosimilitud se recomienda extraer factor
+```{r}
+fa.parallel(r, fm= "ml", n.obs= 30, ylabel= "Eigenvalues")
+```
+
+Con el método de la máxima verosimilitud se recomienda extraer 2 factores.
 
 ## Método paralelo con iteraciones 
 Método paramétrico, sirve solo para modelos con normalidad multivariante
--
-Con el método de Horn`s (método paralelo con iteraciones) se recomienda extraer n factor
+```{r}
+library(paran)
+paran(r, iterations = 1000, graph = T)
+```
+
+Con el método de Horn`s (método paralelo con iteraciones) se recomienda extraer 1 factor
 
 Resumen:
-Ejes principales= 1 factor
-Componentes principales= 1 factor
-Máxima verosimilitud= 1 factor
+Ejes principales= 2 factor
+Componentes principales= 2 factor
+Máxima verosimilitud= 2 factor
 Método paralelo con iteraciones (Horn`s)= 1 factor
 
 Conclusión: vamos a extraer 1 factor
