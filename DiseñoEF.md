@@ -243,6 +243,24 @@ fa.parallel(r, fm= "pa", n.obs= 30, ylabel= "Eigenvalues")
     ## The estimated weights for the factor scores are probably incorrect. Try a
     ## different factor score estimation method.
 
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
+    ## ultra-Heywood case was detected. Examine the results carefully
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
+    ## ultra-Heywood case was detected. Examine the results carefully
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
     ## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
     ## ultra-Heywood case was detected. Examine the results carefully
 
@@ -262,21 +280,6 @@ fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
 
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## The estimated weights for the factor scores are probably incorrect. Try a
-    ## different factor score estimation method.
-
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## The estimated weights for the factor scores are probably incorrect. Try a
-    ## different factor score estimation method.
-
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
 
     ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
     ## The estimated weights for the factor scores are probably incorrect. Try a
@@ -285,19 +288,6 @@ fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
     ## Warning in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, : An
     ## ultra-Heywood case was detected. Examine the results carefully
 
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-
-    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
-    ## The estimated weights for the factor scores are probably incorrect. Try a
-    ## different factor score estimation method.
-
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
-    ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
@@ -309,6 +299,56 @@ fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
     ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
     ## An ultra-Heywood case was detected. Examine the results carefully
 
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## An ultra-Heywood case was detected. Examine the results carefully
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## An ultra-Heywood case was detected. Examine the results carefully
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## An ultra-Heywood case was detected. Examine the results carefully
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## The estimated weights for the factor scores are probably incorrect. Try a
+    ## different factor score estimation method.
+
+    ## Warning in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
+    ## An ultra-Heywood case was detected. Examine the results carefully
+
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
+    ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
     ## factor method not specified correctly, minimum residual (unweighted least squares  used
 
@@ -376,15 +416,14 @@ paran(r, iterations = 1000, graph = T)
     ## Component   Adjusted    Unadjusted    Estimated 
     ##             Eigenvalue  Eigenvalue    Bias 
     ## -------------------------------------------------- 
-    ## 1           2.808464    4.542408      1.733944
+    ## 1           2.795197    4.542408      1.747210
     ## -------------------------------------------------- 
     ## 
     ## Adjusted eigenvalues > 1 indicate dimensions to retain.
     ## (1 components retained)
 
-![](DiseñoEF_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
-
-Con el método de Horn\`s (método paralelo con iteraciones) se recomienda
+![](DiseñoEF_files/figure-gfm/unnamed-chunk-10-1.png)<!-- --> Con el
+método de Horn\`s (método paralelo con iteraciones) se recomienda
 extraer 1 factor
 
 Resumen: Ejes principales= 2 factor Componentes principales= 2 factor
@@ -395,21 +434,49 @@ Conclusión: vamos a extraer 1 factor
 
 # METODOS DE EXTRACCION DE FACTORES
 
-## \#\# METODO DE ANALISIS DE LOS COMPONENTES PRINCIPALES (ACP)
+## METODO DE ANALISIS DE LOS COMPONENTES PRINCIPALES (ACP)
+
+``` r
+acp<- principal(r, nfactors= 1, rotate= "none")
+acp
+```
+
+    ## Principal Components Analysis
+    ## Call: principal(r = r, nfactors = 1, rotate = "none")
+    ## Standardized loadings (pattern matrix) based upon correlation matrix
+    ##                 PC1   h2   u2 com
+    ## Nucleo_Fam     0.36 0.13 0.87   1
+    ## Estrato_s      0.79 0.63 0.37   1
+    ## N_Habitaciones 0.54 0.29 0.71   1
+    ## Gana_mes       0.81 0.66 0.34   1
+    ## N_Carros       0.81 0.66 0.34   1
+    ## Hrs_internet   0.84 0.71 0.29   1
+    ## 
+    ##                 PC1
+    ## SS loadings    3.07
+    ## Proportion Var 0.51
+    ## 
+    ## Mean item complexity =  1
+    ## Test of the hypothesis that 1 component is sufficient.
+    ## 
+    ## The root mean square of the residuals (RMSR) is  0.21 
+    ## 
+    ## Fit based upon off diagonal values = 0.79
 
 PC1: Cargas factoriales de cada variable h2: Comunalidad (varianza común
-explicada). Articulo es explicada en un (h2)% por el factor extraído.
-Cantidad es explicada en un (h2)% por el factor extraído, Precio U es
-explicada en un (h2)% por el factor extraído, Subtotal es explicada en
-un (h2)% por el factor extraído, IVA es explicada en un (h2)% por el
-factor extraído y Total es explicada en un (h2)% por el factor extraído
+explicada). Nucleo\_Fam es explicada en un 13% por el factor extraído.
+Estrato\_s es explicada en un 63% por el factor extraído,
+N\_Habitaciones es explicada en un 29% por el factor extraído, Gana\_mes
+es explicada en un 66% por el factor extraído, N\_Carros es explicada en
+un 66% por el factor extraído y Hrs\_internet es explicada en un 71% por
+el factor extraído.
 
 Mientras más alta sea h2 es mejor el modelo. 0;1
 
 u2: Especificidad (varianza residual o varianza no explicada). El
-articulo no es explicado en un (u2)%, Cantidad pierde (u2)%, precio
-pierde (u2)%, Subtotal pierde (u2)%, IVA pierde (u2)% y Total pierde
-(u2)%
+Nucleo\_Fam no es explicado en un 87%, Estrato\_s pierde 37%,
+N\_Habitaciones pierde 71%, Gana\_mes pierde 34%, N\_Carros pierde 34% y
+Hrs\_internet pierde 29%
 
 Mientras más pequeño sea u2 es mejor el modelo. 0;1
 
@@ -417,27 +484,111 @@ h2 + u2 = 1
 Comunalidad + Especificidad = 1 Varianza explicada + varianza no
 explicada= 1
 
-SS loadings 3.77 (Es la varianza explicada en valores absolutos, o la
-suma de los h2). Proportion Var 0.75 = 75% (El % que la varianza
+SS loadings 3.07 (Es la varianza explicada en valores absolutos, o la
+suma de los h2). Proportion Var 0.51 = 51% (El % que la varianza
 explicada representa del total)
 
 lo “ideal” es que proportion var sea lo más cercano a 1.
 
-RMSR= 0.16 (Raíz cuadrada media de los residuos) Teóricamente un modelo
-presenta una solución adecuada cuando el RSMR es menor o igual a 0,16.
+RMSR= 0.21 (Raíz cuadrada media de los residuos) Teóricamente un modelo
+presenta una solución adecuada cuando el RSMR es menor o igual a 0,21.
 
-## \#\# METODO DE LOS EJES PRINCIPALES O COMPONENTES PRINCIPALES ITERADAS (CPI)
+## METODO DE LOS EJES PRINCIPALES O COMPONENTES PRINCIPALES ITERADAS (CPI)
 
-Proportion Var= 71% RMSR= 0.13
+``` r
+cpi<- fa(r, nfactors= 1, fm="pa", rotate= "none", n.obs= 30)
+cpi
+```
 
-## \#\# METODO DE MAXIMA VEROSIMILITUD
+    ## Factor Analysis using method =  pa
+    ## Call: fa(r = r, nfactors = 1, n.obs = 30, rotate = "none", fm = "pa")
+    ## Standardized loadings (pattern matrix) based upon correlation matrix
+    ##                 PA1    h2   u2 com
+    ## Nucleo_Fam     0.24 0.058 0.94   1
+    ## Estrato_s      0.75 0.562 0.44   1
+    ## N_Habitaciones 0.40 0.161 0.84   1
+    ## Gana_mes       0.74 0.543 0.46   1
+    ## N_Carros       0.77 0.589 0.41   1
+    ## Hrs_internet   0.84 0.708 0.29   1
+    ## 
+    ##                 PA1
+    ## SS loadings    2.62
+    ## Proportion Var 0.44
+    ## 
+    ## Mean item complexity =  1
+    ## Test of the hypothesis that 1 factor is sufficient.
+    ## 
+    ## The degrees of freedom for the null model are  15  and the objective function was  3.15 with Chi Square of  82.33
+    ## The degrees of freedom for the model are 9  and the objective function was  1.15 
+    ## 
+    ## The root mean square of the residuals (RMSR) is  0.19 
+    ## The df corrected root mean square of the residuals is  0.25 
+    ## 
+    ## The harmonic number of observations is  30 with the empirical chi square  32.58  with prob <  0.00016 
+    ## The total number of observations was  30  with Likelihood Chi Square =  29.28  with prob <  0.00058 
+    ## 
+    ## Tucker Lewis Index of factoring reliability =  0.482
+    ## RMSEA index =  0.272  and the 90 % confidence intervals are  0.17 0.394
+    ## BIC =  -1.33
+    ## Fit based upon off diagonal values = 0.83
+    ## Measures of factor score adequacy             
+    ##                                                    PA1
+    ## Correlation of (regression) scores with factors   0.93
+    ## Multiple R square of scores with factors          0.87
+    ## Minimum correlation of possible factor scores     0.73
 
-Proportion Var= % RMSR=
+Proportion Var= 44% RMSR= 0.19
+
+## METODO DE MAXIMA VEROSIMILITUD
+
+``` r
+mve<- fa(r, nfactors= 1, fm="ml", rotate= "none", n.obs= 30)
+mve
+```
+
+    ## Factor Analysis using method =  ml
+    ## Call: fa(r = r, nfactors = 1, n.obs = 30, rotate = "none", fm = "ml")
+    ## Standardized loadings (pattern matrix) based upon correlation matrix
+    ##                 ML1     h2   u2 com
+    ## Nucleo_Fam     0.10 0.0093 0.99   1
+    ## Estrato_s      0.82 0.6718 0.33   1
+    ## N_Habitaciones 0.26 0.0676 0.93   1
+    ## Gana_mes       0.67 0.4447 0.56   1
+    ## N_Carros       0.75 0.5550 0.44   1
+    ## Hrs_internet   0.92 0.8402 0.16   1
+    ## 
+    ##                 ML1
+    ## SS loadings    2.59
+    ## Proportion Var 0.43
+    ## 
+    ## Mean item complexity =  1
+    ## Test of the hypothesis that 1 factor is sufficient.
+    ## 
+    ## The degrees of freedom for the null model are  15  and the objective function was  3.15 with Chi Square of  82.33
+    ## The degrees of freedom for the model are 9  and the objective function was  1.07 
+    ## 
+    ## The root mean square of the residuals (RMSR) is  0.2 
+    ## The df corrected root mean square of the residuals is  0.26 
+    ## 
+    ## The harmonic number of observations is  30 with the empirical chi square  37.24  with prob <  2.4e-05 
+    ## The total number of observations was  30  with Likelihood Chi Square =  27.19  with prob <  0.0013 
+    ## 
+    ## Tucker Lewis Index of factoring reliability =  0.535
+    ## RMSEA index =  0.257  and the 90 % confidence intervals are  0.154 0.381
+    ## BIC =  -3.42
+    ## Fit based upon off diagonal values = 0.81
+    ## Measures of factor score adequacy             
+    ##                                                    ML1
+    ## Correlation of (regression) scores with factors   0.95
+    ## Multiple R square of scores with factors          0.90
+    ## Minimum correlation of possible factor scores     0.81
+
+Proportion Var= 43% RMSR= 0,2
 
 ### RESUMEN
 
-ACP: var= % RMSR= CPI: Var= % RMSR=  
-MVE: Var= % RMSR=
+ACP: var= 51% RMSR= 0,21 CPI: Var= 44% RMSR= 0,19  
+MVE: Var= 43% RMSR= 0,2
 
 ¿Con cuál nos quedamos? Aquel modelo que tenga la proportion var más
 alta y el RMSR más pequeño.

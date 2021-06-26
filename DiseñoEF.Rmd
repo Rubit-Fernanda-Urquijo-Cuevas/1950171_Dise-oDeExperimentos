@@ -43,7 +43,6 @@ correlaciones<- corr.test(datost[,2:7]) #se crea la matriz de correlaciones
 correlaciones$r #matriz de correlaciones
 r<- as.matrix(correlaciones$r)
 ```
-
 Alfa= 0,05  
 P value > alfa: no se rechaza H0  
 P value < alfa: se rechaza H0, estamos en esta situación, por lo tanto, si es aplicable el análisis factorial exploratorio   
@@ -59,7 +58,6 @@ P value >alfa: si se aplica el AFE (se rechaza H0)
 dim(datost)  #tamaño de la muestra= 30 personas
 cortest.bartlett(r, n= 30)
 ```
-
 Como el p value es menor a alfa, se rechaza la H0, por lo tanto, las correlaciones teóricas entre cada par de variables es nulo, es decir, si es aplicable el análisis factorial exploratorio (AFE).
 
 ## MEDIDA DE ADECUACION MUESTRAL DE KAISER, MEYER Y OKLIN (KMO)  
@@ -69,7 +67,6 @@ Se elimina una variable del modelo, si el KMO es menor a 0,7.
 ```{r}
 KMO(r)
 ```
-
 KMO= 0,69 El modelo es middling (regular), si es adecuado para realizar análisis factorial.
 KMO Nucleo_Fam= 0,53 (Miserable)
 KMO Estrato_s= 0,72 (Middling)
@@ -84,7 +81,6 @@ Este método de las Ejes principales es de naturaleza no paramétrica, es decir,
 ```{r}
 fa.parallel(r, fm= "pa", n.obs= 30, ylabel= "Eigenvalues")
 ```
-
 Con el método de los ejes principales se extraería solo 2 factores.
 
 ## Método de las componentes principales
@@ -92,7 +88,6 @@ Método paramétrico, sirve solo para modelos con normalidad multivariante
 ```{r}
 fa.parallel(r, fm= "pc", n.obs= 30, ylabel= "Eigenvalues")
 ```
-
 con el método de las componentes principales se recomienda extraer 2 factores
 
 ## Método de la máxima verosimilitud  
@@ -100,7 +95,6 @@ Método paramétrico, sirve solo para modelos con normalidad multivariante
 ```{r}
 fa.parallel(r, fm= "ml", n.obs= 30, ylabel= "Eigenvalues")
 ```
-
 Con el método de la máxima verosimilitud se recomienda extraer 2 factores.
 
 ## Método paralelo con iteraciones 
@@ -109,7 +103,6 @@ Método paramétrico, sirve solo para modelos con normalidad multivariante
 library(paran)
 paran(r, iterations = 1000, graph = T)
 ```
-
 Con el método de Horn`s (método paralelo con iteraciones) se recomienda extraer 1 factor
 
 Resumen:
@@ -122,13 +115,16 @@ Conclusión: vamos a extraer 1 factor
 
 # METODOS DE EXTRACCION DE FACTORES
 ## METODO DE ANALISIS DE LOS COMPONENTES PRINCIPALES (ACP)
--
+```{r}
+acp<- principal(r, nfactors= 1, rotate= "none")
+acp
+```
 PC1: Cargas factoriales de cada variable
-h2: Comunalidad (varianza común explicada). Articulo es explicada en un (h2)% por el factor extraído. Cantidad es explicada en un (h2)% por el factor extraído, Precio U es explicada en un (h2)% por el factor extraído, Subtotal es explicada en un (h2)% por el factor extraído, IVA es explicada en un (h2)% por el factor extraído y Total es explicada en un (h2)% por el factor extraído
+h2: Comunalidad (varianza común explicada). Nucleo_Fam es explicada en un 13% por el factor extraído. Estrato_s es explicada en un 63% por el factor extraído, N_Habitaciones es explicada en un 29% por el factor extraído, Gana_mes es explicada en un 66% por el factor extraído, N_Carros es explicada en un 66% por el factor extraído y Hrs_internet es explicada en un 71% por el factor extraído.
 
 Mientras más alta sea h2 es mejor el modelo. 0;1
 
-u2: Especificidad (varianza residual o varianza no explicada). El articulo no es explicado en un (u2)%, Cantidad pierde (u2)%, precio pierde (u2)%, Subtotal pierde (u2)%, IVA pierde (u2)% y Total pierde (u2)%
+u2: Especificidad (varianza residual o varianza no explicada). El Nucleo_Fam no es explicado en un 87%, Estrato_s pierde 37%, N_Habitaciones pierde 71%, Gana_mes pierde 34%, N_Carros pierde 34% y Hrs_internet pierde 29%
 
 Mientras más pequeño sea u2 es mejor el modelo. 0;1
 
@@ -136,28 +132,34 @@ h2 + u2 = 1
 Comunalidad + Especificidad = 1
 Varianza explicada + varianza no explicada= 1
 
-SS loadings 3.77 (Es la varianza explicada en valores absolutos, o la suma de los h2).
-Proportion Var 0.75 = 75% (El % que la varianza explicada representa del total)
+SS loadings 3.07 (Es la varianza explicada en valores absolutos, o la suma de los h2).
+Proportion Var 0.51 = 51% (El % que la varianza explicada representa del total)
 
 lo "ideal" es que proportion var sea lo más cercano a 1.
 
-RMSR= 0.16 (Raíz cuadrada media de los residuos)
-Teóricamente un modelo presenta una solución adecuada cuando el RSMR es menor o igual a 0,16.
+RMSR= 0.21 (Raíz cuadrada media de los residuos)
+Teóricamente un modelo presenta una solución adecuada cuando el RSMR es menor o igual a 0,21.
 
 ## METODO DE LOS EJES PRINCIPALES O COMPONENTES PRINCIPALES ITERADAS (CPI)
--
-Proportion Var= 71%
-RMSR= 0.13
+```{r}
+cpi<- fa(r, nfactors= 1, fm="pa", rotate= "none", n.obs= 30)
+cpi
+```
+Proportion Var= 44%
+RMSR= 0.19
 
 ## METODO DE MAXIMA VEROSIMILITUD
--
-Proportion Var= %
-RMSR= 
+```{r}
+mve<- fa(r, nfactors= 1, fm="ml", rotate= "none", n.obs= 30)
+mve
+```
+Proportion Var= 43%
+RMSR= 0,2
 
 ### RESUMEN
-ACP: var= %    RMSR=
-CPI: Var= %    RMSR=  
-MVE: Var= %    RMSR=   
+ACP: var= 51%    RMSR= 0,21
+CPI: Var= 44%    RMSR= 0,19  
+MVE: Var= 43%    RMSR= 0,2   
 
 ¿Con cuál nos quedamos?
 Aquel modelo que tenga la proportion var más alta y el RMSR más pequeño.
