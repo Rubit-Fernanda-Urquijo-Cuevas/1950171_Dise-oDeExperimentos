@@ -73,7 +73,7 @@ mvn(datost[2:7])
     ## N_Carros       -1.1024263 0.3628239  0.02382692 -1.2070186
     ## Hrs_internet   -1.1953091 1.2777442  0.05657937 -1.5198989
 
-Como el p value &gt; alfa: no se rechaza la HO, por lo tanto, existe
+Como el p value &gt; alfa: no se rechaza la H0, por lo tanto, existe
 normalidad multivariante.
 
 # MATRIZ DE CORRELACIONES
@@ -82,8 +82,74 @@ H0: Correlación = 0 (no hay correlación)
 H1: Correlación diferente de 0 (si hay correlación)
 
 Cuando no se rechaza H0, no se aplica AFE.  
-Se rechace HO, si para aplicar AFE.  
-- Alfa= 0,05  
+Se rechace HO, si para aplicar AFE.
+
+``` r
+library(psych)
+corr.test(datost[,2:7])
+```
+
+    ## Call:corr.test(x = datost[, 2:7])
+    ## Correlation matrix 
+    ##                Nucleo_Fam Estrato_s N_Habitaciones Gana_mes N_Carros
+    ## Nucleo_Fam           1.00      0.04           0.68     0.35     0.05
+    ## Estrato_s            0.04      1.00           0.21     0.44     0.62
+    ## N_Habitaciones       0.68      0.21           1.00     0.42     0.31
+    ## Gana_mes             0.35      0.44           0.42     1.00     0.54
+    ## N_Carros             0.05      0.62           0.31     0.54     1.00
+    ## Hrs_internet         0.02      0.77           0.15     0.63     0.66
+    ##                Hrs_internet
+    ## Nucleo_Fam             0.02
+    ## Estrato_s              0.77
+    ## N_Habitaciones         0.15
+    ## Gana_mes               0.63
+    ## N_Carros               0.66
+    ## Hrs_internet           1.00
+    ## Sample Size 
+    ## [1] 30
+    ## Probability values (Entries above the diagonal are adjusted for multiple tests.) 
+    ##                Nucleo_Fam Estrato_s N_Habitaciones Gana_mes N_Carros
+    ## Nucleo_Fam           0.00      1.00           0.00     0.38     1.00
+    ## Estrato_s            0.85      0.00           1.00     0.13     0.00
+    ## N_Habitaciones       0.00      0.28           0.00     0.16     0.60
+    ## Gana_mes             0.05      0.01           0.02     0.00     0.02
+    ## N_Carros             0.79      0.00           0.10     0.00     0.00
+    ## Hrs_internet         0.91      0.00           0.44     0.00     0.00
+    ##                Hrs_internet
+    ## Nucleo_Fam                1
+    ## Estrato_s                 0
+    ## N_Habitaciones            1
+    ## Gana_mes                  0
+    ## N_Carros                  0
+    ## Hrs_internet              0
+    ## 
+    ##  To see confidence intervals of the correlations, print with the short=FALSE option
+
+``` r
+correlaciones<- corr.test(datost[,2:7]) #se crea la matriz de correlaciones
+correlaciones$r #matriz de correlaciones
+```
+
+    ##                Nucleo_Fam  Estrato_s N_Habitaciones  Gana_mes   N_Carros
+    ## Nucleo_Fam     1.00000000 0.03606478      0.6820755 0.3547334 0.05047441
+    ## Estrato_s      0.03606478 1.00000000      0.2055744 0.4425222 0.62214439
+    ## N_Habitaciones 0.68207546 0.20557443      1.0000000 0.4226895 0.30604898
+    ## Gana_mes       0.35473337 0.44252223      0.4226895 1.0000000 0.54433649
+    ## N_Carros       0.05047441 0.62214439      0.3060490 0.5443365 1.00000000
+    ## Hrs_internet   0.02056331 0.77084847      0.1453368 0.6256427 0.66284681
+    ##                Hrs_internet
+    ## Nucleo_Fam       0.02056331
+    ## Estrato_s        0.77084847
+    ## N_Habitaciones   0.14533682
+    ## Gana_mes         0.62564274
+    ## N_Carros         0.66284681
+    ## Hrs_internet     1.00000000
+
+``` r
+r<- as.matrix(correlaciones$r)
+```
+
+Alfa= 0,05  
 P value &gt; alfa: no se rechaza H0  
 P value &lt; alfa: se rechaza H0, estamos en esta situación, por lo
 tanto, si es aplicable el análisis factorial exploratorio
@@ -96,8 +162,28 @@ H0: Las correlaciones teóricas entre cada par de variables es nulo
 H1: Las correlaciones teóricas entre cada par de variables no es nulo
 
 P value &gt;alfa: no se aplica el AFE (no se rechaza H0)  
-P value &gt;alfa: si se aplica el AFE (se rechaza H0)  
-- Como el p value es menor a alfa, se rechaza la H0, por lo tanto, las
+P value &gt;alfa: si se aplica el AFE (se rechaza H0)
+
+``` r
+dim(datost)  #tamaño de la muestra= 30 personas
+```
+
+    ## [1] 30  7
+
+``` r
+cortest.bartlett(r, n= 30)
+```
+
+    ## $chisq
+    ## [1] 82.33476
+    ## 
+    ## $p.value
+    ## [1] 2.606944e-11
+    ## 
+    ## $df
+    ## [1] 15
+
+Como el p value es menor a alfa, se rechaza la H0, por lo tanto, las
 correlaciones teóricas entre cada par de variables es nulo, es decir, si
 es aplicable el análisis factorial exploratorio (AFE).
 
@@ -106,9 +192,10 @@ es aplicable el análisis factorial exploratorio (AFE).
 Estudia variable por variable, si son o no aceptadas en el modelo para
 hacer AFE. (Que variables elimino o mantengo) Se mantiene una variable
 en el modelo, si el KMO es igual o mayor a 0,7. Se elimina una variable
-del modelo, si el KMO es menor a 0,7. - KMO= , adecuado para realizar
-análisis factorial. KMO Nº del articulo= KMO Cantidad de prod.= KMO
-Precio Unidad= KMO Subtotal= KMO IVA=
+del modelo, si el KMO es menor a 0,7.
+
+KMO= , adecuado para realizar análisis factorial. KMO Nº del articulo=
+KMO Cantidad de prod.= KMO Precio Unidad= KMO Subtotal= KMO IVA=
 
 # DETERMINACION DEL NUMERO DE FACTORES A EXTRAER
 
