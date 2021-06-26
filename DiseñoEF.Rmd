@@ -166,34 +166,64 @@ Aquel modelo que tenga la proportion var más alta y el RMSR más pequeño.
 
 # REPRESENTACION GRAFICA DE LOS FACTORES EXTRAIDOS
 ## Método de análisis de las componentes principales (ACP)
--
+```{r}
+#Solo se grafica cuando hay 2 factores a extraer, con 1 factor no hay grafica
+```
 
 ## Método de las componentes principales iteradas (CPI)
--
+```{r}
+
+```
 
 ## Método de la máxima verosimilitud (MVE)
--
+```{r}
+
+```
 
 # OBTENCION DE LAS PUNTUACIONES FACTORIALES
 ## METODO DE ANALISIS DE LAS COMPONENTES PRINCIPALES ITERADAS (ACP)
--
+```{r}
+acp1<- principal(datost[,2:7], nfactors= 1, rotate= "none", scores= T)
+acp1$scores
+puntuacionesfactoriales_acp<- acp1$scores
+puntuacionesfactoriales_acp<- as.data.frame(puntuacionesfactoriales_acp)
+```
 
 ## METODO DE LAS COMPONENTES PRINCIPALES ITERADAS (CPI)
--
+```{r}
+cpi1<- fa(datost[,2:7], nfactors= 1, fm= "pa", rotate= "none", n.obs= 30, scores= "regression")
+cpi1$scores
+puntfact_cpi<- cpi1$scores
+puntfact_cpi<- as.data.frame(puntfact_cpi)
+```
 
 ## METODO DE LA MAXIMA VEROSIMILITUD
--
+```{r}
+mve1<- fa(datost[,2:6], nfactors= 1, fm= "ml", rotate= "none", n.obs= 30, scores= "regression")
+mve1$scores
+puntfact_mve<- mve1$scores
+puntfact_mve<- as.data.frame(puntfact_mve)
+```
 
 # OBTENCION DE LOS FACTORES EXTRAIDOS
 Aquí se trabaja con el método que el investigador decidió (ACP, CPI, MVE)
--
-Z1= (PC1)Nº  del articulo + (PC1)Cantidad de prod. + (PC1)Precio Unidad + (PC1)Subtotal + (PC1)IVA
+```{r}
+factor.scores(r, acp, method= "Thurstone")
+```
+Z1= 0,11Nucleo_Fam + 0,25Estrato_s + 0,17N_Habitaciones + 0,26Gana_mes + 0,26N_Carros + 0,27Hrs_internet
 
 # AGREGAR FACTOR EXTRAIDO (PUNTUACIONES FACTORIALES) EN EL DATA FRAME ORIGINAL
--
+```{r}
+datos_puntuaciones<- c(datos, puntuacionesfactoriales_acp)
+datos_puntuaciones<- as.data.frame(datos_puntuaciones)
+```
 
 # GUARDAR EL DATA FRAME "DATOS_PUNTUACIONES"
--
+```{r}
+setwd("C:/Users/INDEX/Documents/Diseño de Experimentos/Temas Examen Final") #define donde guardaras tu archivo Excel csv
+write.table(datos_puntuaciones, file= "encuesta.csv", sep= ";", row.names= F, dec=",")
+```
+
 
 
 
